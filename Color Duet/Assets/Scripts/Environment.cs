@@ -18,47 +18,39 @@ public class Environment : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        RecoverBall();
-
         //Destroy(collision.collider.gameObject);
-        collision.gameObject.SetActive(false);
-
-        if (collision.gameObject.CompareTag("BlueBall"))
+        if (gameObject.CompareTag("Spike"))
         {
-            Instantiate(blueParticle, spawnLocationBlue.transform.position, Quaternion.identity);
-        }
+            if (collision.gameObject.CompareTag("BlueBall"))
+            {
+                Instantiate(blueParticle, spawnLocationBlue.transform.position, Quaternion.identity);
+                collision.gameObject.SetActive(false);
+            }
 
-        if (collision.gameObject.CompareTag("RedBall"))
-        {
-            Instantiate(redParticle, spawnLocationRed.transform.position, Quaternion.identity);
-        }
+            if (collision.gameObject.CompareTag("RedBall"))
+            {
+                Instantiate(redParticle, spawnLocationRed.transform.position, Quaternion.identity);
+                collision.gameObject.SetActive(false);
+            }
+        }           
 
-        /*if (gameObject.CompareTag("BlueBall") && !levelManager.redBall.active)
+        if (gameObject.CompareTag("RecoverBall"))
         {
-            levelManager.redBall.SetActive(true);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
             Instantiate(blueParticle, transform.position, Quaternion.identity);
-        }
 
-        if (gameObject.CompareTag("redBall") && !levelManager.blueBall.active)
-        {
-            levelManager.blueBall.SetActive(true);
-            Instantiate(blueParticle, transform.position, Quaternion.identity);
-        }*/
+            if (!levelManager.redBall.active)
+            {
+                levelManager.redBall.SetActive(true);
+                //Instantiate(blueParticle, transform.position, Quaternion.identity);               
+            }
 
-    }
-
-    public void RecoverBall()
-    {
-        if(gameObject.CompareTag("RecoverBall") && !levelManager.redBall.active)
-        {
-            levelManager.redBall.SetActive(true);
-            Instantiate(blueParticle, transform.position, Quaternion.identity);
-        }
-
-        if(gameObject.CompareTag("RecoverBall") && !levelManager.blueBall.active)
-        {
-            levelManager.blueBall.SetActive(true);
-            Instantiate(blueParticle, transform.position, Quaternion.identity);
+            if (!levelManager.blueBall.active)
+            {
+                levelManager.blueBall.SetActive(true);
+                //Instantiate(blueParticle, transform.position, Quaternion.identity);
+            }
         }
     }
 }
