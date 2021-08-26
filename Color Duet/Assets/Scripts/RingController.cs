@@ -16,6 +16,8 @@ public class RingController : MonoBehaviour
     public bool isDown;
     public bool isUp;
 
+    public ParticleSystem ringParticle;
+
     void Start()
     {
         if (isDown && !isUp)
@@ -45,5 +47,18 @@ public class RingController : MonoBehaviour
     public void MoveUp()
     {
         upTween = transform.DOMoveY(upRange, moveDuration).SetEase(moveEase).OnComplete(() => MoveDown());
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (gameObject.CompareTag("Ring"))
+        {
+            downTween.Kill();
+            upTween.Kill();
+            isDown = false;
+            isUp = false;
+            //Instantiate(ringParticle, transform.position, Quaternion.identity);
+            //ScoreTextScript.score = +5;
+        }
     }
 }

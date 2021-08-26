@@ -32,7 +32,7 @@ public class Environment : MonoBehaviour
                 Instantiate(redParticle, spawnLocationRed.transform.position, Quaternion.identity);
                 collision.gameObject.SetActive(false);
             }
-        }           
+        }          
 
         if (gameObject.CompareTag("RecoverBall"))
         {
@@ -43,13 +43,13 @@ public class Environment : MonoBehaviour
             if (!levelManager.redBall.active)
             {
                 levelManager.redBall.SetActive(true);
-                //Instantiate(blueParticle, transform.position, Quaternion.identity);               
+                Instantiate(blueParticle, spawnLocationRed.transform.position, Quaternion.identity);               
             }
 
             if (!levelManager.blueBall.active)
             {
                 levelManager.blueBall.SetActive(true);
-                //Instantiate(blueParticle, transform.position, Quaternion.identity);
+                Instantiate(blueParticle, spawnLocationBlue.transform.position, Quaternion.identity);
             }
         }
     }
