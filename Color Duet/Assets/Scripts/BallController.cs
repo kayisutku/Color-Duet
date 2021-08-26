@@ -15,9 +15,11 @@ public class BallController : MonoBehaviour
     public bool isTapRouteUp;
     public bool isTaped = false;
 
-    Tween initialMovement;
-    Tween loopMovement;
-    Tween comeBackTween;
+    private Tween initialMovement;
+    private Tween loopMovement;
+    private Tween comeBackTween;
+
+    #region monoBehaviours
 
     void Update()
     {
@@ -25,12 +27,13 @@ public class BallController : MonoBehaviour
         GetMouseButtonFunc();
     }
 
+    #endregion
 
-    public void GetMouseButtonFunc()
+    private void GetMouseButtonFunc()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            comeBackTween.Kill();
+            comeBackTween.Kill(); //comeBackTween?.Kill();
             initialMovement = transform.DOMoveY(-waveAmplitude, timeDuration).SetEase(moveEase).OnComplete(() => {
               loopMovement = transform.DOMoveY(waveAmplitude, timeDuration).SetEase(moveEase).SetLoops(-1, LoopType.Yoyo);
                 

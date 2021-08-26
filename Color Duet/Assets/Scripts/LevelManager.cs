@@ -8,10 +8,23 @@ public class LevelManager : MonoBehaviour
     public GameObject redBall;
     public GameObject blueBall;
 
+    public GameState GameState
+    {
+        get; private set;
+    }
+
     private void Start()
     {
         redBall = GameObject.Find("Red Ball");
         blueBall = GameObject.Find("Blue Ball");
+
+        GameState = GameState.playing;
+
+        switch (GameState)
+        {
+
+
+        }
     }
     void Update()
     {
@@ -40,3 +53,11 @@ public class LevelManager : MonoBehaviour
     }
 }
 
+
+public enum GameState
+{
+    start,
+    playing,
+    victory,
+    defeat
+}
