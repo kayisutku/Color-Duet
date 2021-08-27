@@ -8,6 +8,7 @@ public class BallColorController : MonoBehaviour
     Color ownColor;
     Color lerpColor;
     [SerializeField] Color mixColor;
+    public GameObject otherBall;
 
     Renderer renderer;
 
@@ -22,10 +23,15 @@ public class BallColorController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Mathf.Abs(transform.position.y)  < colorChangeHeight)
+
+        if (otherBall.active)
         {
-            renderer.material.SetColor("_Color", Color.Lerp(ownColor , mixColor, (colorChangeHeight - Mathf.Abs(transform.position.y) / colorChangeHeight    )));
-        } 
+            if (Mathf.Abs(transform.position.y) < colorChangeHeight)
+            {
+                renderer.material.SetColor("_Color", Color.Lerp(ownColor, mixColor, (colorChangeHeight - Mathf.Abs(transform.position.y) / colorChangeHeight)));
+            }
+        }
+        
     }
 
     
