@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4847791733295422901}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.47819, y: 0.25, z: 16.32}
+  m_LocalPosition: {x: 0, y: 0.25, z: 16.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4957453395104688390}
@@ -49,6 +49,8 @@ MonoBehaviour:
   swayAmount: 0.1
   timeDuration: 0.6
   rotateAmount: 70
+  goldParticle: {fileID: 1339338113731376740, guid: 4d2a5c2bedc2fbe4bbc75a4dcbb42beb,
+    type: 3}
 --- !u!65 &1900389706
 BoxCollider:
   m_ObjectHideFlags: 0

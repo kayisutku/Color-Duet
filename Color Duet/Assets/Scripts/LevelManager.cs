@@ -17,14 +17,6 @@ public class LevelManager : MonoBehaviour
     {
         redBall = GameObject.Find("Red Ball");
         blueBall = GameObject.Find("Blue Ball");
-
-        GameState = GameState.playing;
-
-        switch (GameState)
-        {
-
-
-        }
     }
     void Update()
     {
