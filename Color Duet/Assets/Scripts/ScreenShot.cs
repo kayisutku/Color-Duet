@@ -7,13 +7,7 @@ public class ScreenShot : MonoBehaviour
     private int imageNum = 1;
     public string screenShotName = "sample";
 
-    void Start()
-    {
-
-    }
-
-
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {

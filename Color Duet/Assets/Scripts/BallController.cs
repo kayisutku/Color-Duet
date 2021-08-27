@@ -23,7 +23,7 @@ public class BallController : MonoBehaviour
 
     #region monoBehaviours
 
-    void Update()
+    private void Update()
     {
         //PosCheck();
         GetMouseButtonFunc();

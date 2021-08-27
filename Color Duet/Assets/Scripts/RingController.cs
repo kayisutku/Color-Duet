@@ -18,7 +18,7 @@ public class RingController : MonoBehaviour
 
     public ParticleSystem ringParticle;
 
-    void Start()
+    private void Start()
     {
         if (isDown && !isUp)
         {
@@ -31,20 +31,13 @@ public class RingController : MonoBehaviour
         }
     }
 
-
-    void Update()
-    {
-
-    }
-
-
-    public void MoveDown()
+    private void MoveDown()
     {
         downTween = transform.DOMoveY(-downRange, moveDuration).SetEase(moveEase).OnComplete(() => MoveUp());
     }
 
 
-    public void MoveUp()
+    private void MoveUp()
     {
         upTween = transform.DOMoveY(upRange, moveDuration).SetEase(moveEase).OnComplete(() => MoveDown());
     }

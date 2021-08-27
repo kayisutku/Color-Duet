@@ -12,7 +12,7 @@ public class BallColorController : MonoBehaviour
     Renderer renderer;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         renderer = GetComponent<Renderer>();
         //renderer.material.SetColor("_Color", mixColor);
@@ -20,7 +20,7 @@ public class BallColorController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Mathf.Abs(transform.position.y)  < colorChangeHeight)
         {
