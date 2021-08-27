@@ -18,7 +18,6 @@ public class Environment : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //Destroy(collision.collider.gameObject);
         if (gameObject.CompareTag("Spike"))
         {
             if (collision.gameObject.CompareTag("BlueBall"))
@@ -36,7 +35,6 @@ public class Environment : MonoBehaviour
 
         if (gameObject.CompareTag("RecoverBall"))
         {
-            //Destroy(gameObject);
             gameObject.SetActive(false);
             Instantiate(blueParticle, transform.position, Quaternion.identity);
 

@@ -9,7 +9,8 @@ public class RingController : MonoBehaviour
     Tween upTween;
     [SerializeField] private Ease moveEase;
 
-    public float moveDuration;
+    public float upMoveDuration;
+    public float downMoveDuration;
     public float downRange;
     public float upRange;
 
@@ -33,13 +34,13 @@ public class RingController : MonoBehaviour
 
     private void MoveDown()
     {
-        downTween = transform.DOMoveY(-downRange, moveDuration).SetEase(moveEase).OnComplete(() => MoveUp());
+        downTween = transform.DOMoveY(-downRange, downMoveDuration).SetEase(moveEase).OnComplete(() => MoveUp());
     }
 
 
     private void MoveUp()
     {
-        upTween = transform.DOMoveY(upRange, moveDuration).SetEase(moveEase).OnComplete(() => MoveDown());
+        upTween = transform.DOMoveY(upRange, upMoveDuration).SetEase(moveEase).OnComplete(() => MoveDown());
     }
 
     private void OnTriggerEnter(Collider other)
@@ -50,8 +51,6 @@ public class RingController : MonoBehaviour
             upTween.Kill();
             isDown = false;
             isUp = false;
-            //Instantiate(ringParticle, transform.position, Quaternion.identity);
-            //ScoreTextScript.score = +5;
         }
     }
 }
