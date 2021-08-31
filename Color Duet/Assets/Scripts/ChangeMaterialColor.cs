@@ -25,7 +25,7 @@ public class ChangeMaterialColor : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         
-        if (other.CompareTag("Downball") || other.CompareTag("Upball"))
+        if (other.CompareTag("Downball") || other.CompareTag("UpBall"))
         {
             counter++;
         }
@@ -37,7 +37,7 @@ public class ChangeMaterialColor : MonoBehaviour
             Instantiate(environment.downParticle, transform.position, Quaternion.identity);
         }
 
-        else if (other.CompareTag("Upball"))
+        else if (other.CompareTag("UpBall"))
         {
             ringMaterial.sharedMaterial = material[1];
             Instantiate(environment.upParticle, transform.position, Quaternion.identity);

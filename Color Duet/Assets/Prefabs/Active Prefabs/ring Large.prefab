@@ -108,14 +108,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ringMaterial: {fileID: 6022264160635052061}
-  ringColorMix: {r: 0.70980394, g: 0.08627451, b: 0.63529414, a: 0}
-  ringColorBlue: {r: 0.19607843, g: 0.19607843, b: 0.8784314, a: 0}
-  ringColorRed: {r: 0.8392157, g: 0.12156863, b: 0.12156863, a: 0}
   material:
   - {fileID: 2100000, guid: 226221a5ed95cb449aef4e84a8898aec, type: 2}
   - {fileID: 2100000, guid: e1917cbe77d4b124593294bc459b17b7, type: 2}
   - {fileID: 2100000, guid: 0e2fd1a2a74dc144086ab156cdaba656, type: 2}
-  - {fileID: 2100000, guid: a897739d272f58048ad58f2712999a79, type: 2}
+  - {fileID: -6478536213147159724, guid: f2650285b0cd35845a41ad1acbfba5d3, type: 3}
 --- !u!114 &4923266694062943061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,10 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e7c8824223b56499b0ea48bf487779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redParticle: {fileID: 8501357943184148765, guid: 090d58914a44565489135da5993643f9,
-    type: 3}
-  blueParticle: {fileID: 8501357943184148765, guid: 1cd15a04d15e80e44bc9dfdab7e7e5d9,
-    type: 3}
-  spawnLocationBlue: {fileID: 0}
-  spawnLocationRed: {fileID: 0}
+  upParticle: {fileID: 0}
+  downParticle: {fileID: 0}
+  recoverParticle: {fileID: 0}
+  spawnLocationDown: {fileID: 0}
+  spawnLocationUp: {fileID: 0}
   levelManager: {fileID: 0}
