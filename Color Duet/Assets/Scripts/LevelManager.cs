@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public GameObject redBall;
-    public GameObject blueBall;
+    public GameObject upBall;
+    public GameObject downBall;
 
     public GameState GameState
     {
@@ -15,8 +15,8 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        redBall = GameObject.Find("Red Ball");
-        blueBall = GameObject.Find("Blue Ball");
+        upBall = GameObject.Find("Up Ball");
+        downBall = GameObject.Find("Down Ball");
     }
     void Update()
     {
@@ -33,7 +33,7 @@ public class LevelManager : MonoBehaviour
 
     public void FailCheck()
     {
-        if (!redBall.active && !blueBall.active )
+        if (!upBall.active && !downBall.active )
         {
             Invoke("ReStart", 1f);
         }    

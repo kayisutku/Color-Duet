@@ -124,9 +124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ringMaterial: {fileID: 0}
-  ringColorMix: {r: 0.70980394, g: 0.08627451, b: 0.63529414, a: 0}
-  ringColorBlue: {r: 0.19607843, g: 0.19607843, b: 0.8784314, a: 0}
-  ringColorRed: {r: 0.8392157, g: 0.12156863, b: 0.12156863, a: 0}
   material:
   - {fileID: 2100000, guid: 226221a5ed95cb449aef4e84a8898aec, type: 2}
   - {fileID: 2100000, guid: e1917cbe77d4b124593294bc459b17b7, type: 2}
@@ -165,10 +162,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e7c8824223b56499b0ea48bf487779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redParticle: {fileID: 8501357943184148765, guid: 090d58914a44565489135da5993643f9,
+  upParticle: {fileID: 8501357943184148765, guid: 090d58914a44565489135da5993643f9,
     type: 3}
-  blueParticle: {fileID: 8501357943184148765, guid: 1cd15a04d15e80e44bc9dfdab7e7e5d9,
+  downParticle: {fileID: 8501357943184148765, guid: 1cd15a04d15e80e44bc9dfdab7e7e5d9,
     type: 3}
-  spawnLocationBlue: {fileID: 0}
-  spawnLocationRed: {fileID: 0}
+  recoverParticle: {fileID: 5971989858299007569, guid: aafcce8938c834249b7385902d9e6e49,
+    type: 3}
+  spawnLocationDown: {fileID: 0}
+  spawnLocationUp: {fileID: 0}
   levelManager: {fileID: 0}

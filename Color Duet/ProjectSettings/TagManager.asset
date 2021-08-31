@@ -9,6 +9,9 @@ TagManager:
   - BlueBall
   - RecoverBall
   - Ring
+  - Gold
+  - UpBall
+  - Downball
   layers:
   - Default
   - TransparentFX

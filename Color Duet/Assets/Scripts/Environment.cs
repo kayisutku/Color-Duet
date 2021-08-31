@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Environment : MonoBehaviour
 {
-    public ParticleSystem redParticle;
-    public ParticleSystem blueParticle;
-    public GameObject spawnLocationBlue;
-    public GameObject spawnLocationRed;
+    public ParticleSystem upParticle;
+    public ParticleSystem downParticle;
+    public ParticleSystem recoverParticle;
+    public GameObject spawnLocationDown;
+    public GameObject spawnLocationUp;
 
     public LevelManager levelManager;
 
@@ -20,15 +21,15 @@ public class Environment : MonoBehaviour
     {
         if (gameObject.CompareTag("Spike"))
         {
-            if (collision.gameObject.CompareTag("BlueBall"))
+            if (collision.gameObject.CompareTag("Downball"))
             {
-                Instantiate(blueParticle, spawnLocationBlue.transform.position, Quaternion.identity);
+                Instantiate(downParticle, spawnLocationDown.transform.position, Quaternion.identity);
                 collision.gameObject.SetActive(false);
             }
 
-            if (collision.gameObject.CompareTag("RedBall"))
+            if (collision.gameObject.CompareTag("UpBall"))
             {
-                Instantiate(redParticle, spawnLocationRed.transform.position, Quaternion.identity);
+                Instantiate(upParticle, spawnLocationUp.transform.position, Quaternion.identity);
                 collision.gameObject.SetActive(false);
             }
         }          
@@ -36,18 +37,18 @@ public class Environment : MonoBehaviour
         if (gameObject.CompareTag("RecoverBall"))
         {
             gameObject.SetActive(false);
-            Instantiate(blueParticle, transform.position, Quaternion.identity);
+            Instantiate(recoverParticle, transform.position, Quaternion.identity);
 
-            if (!levelManager.redBall.active)
+            if (!levelManager.upBall.active)
             {
-                levelManager.redBall.SetActive(true);
-                Instantiate(blueParticle, spawnLocationRed.transform.position, Quaternion.identity);               
+                levelManager.upBall.SetActive(true);
+                Instantiate(upParticle, spawnLocationUp.transform.position, Quaternion.identity);               
             }
 
-            if (!levelManager.blueBall.active)
+            if (!levelManager.downBall.active)
             {
-                levelManager.blueBall.SetActive(true);
-                Instantiate(blueParticle, spawnLocationBlue.transform.position, Quaternion.identity);
+                levelManager.downBall.SetActive(true);
+                Instantiate(downParticle, spawnLocationDown.transform.position, Quaternion.identity);
             }
         }
     }
